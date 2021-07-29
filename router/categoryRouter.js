@@ -10,9 +10,14 @@ const authAdmin = require("../middlewares/authAdmin");
 
 const router = express.Router();
 
-router.get("/category", getCategories);
-router.post("/category", auth, authAdmin, createCategories);
-router.put("/category/:id", auth, authAdmin, updateCategories);
-router.delete("/category/:id", auth, authAdmin, deleteCategories);
+router
+  .route("/category")
+  .get(getCategories)
+  .post(auth, authAdmin, createCategories);
+
+router
+  .route("/category/:id")
+  .put(auth, authAdmin, updateCategories)
+  .delete(auth, authAdmin, deleteCategories);
 
 module.exports = router;
