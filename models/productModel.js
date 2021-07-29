@@ -30,8 +30,20 @@ const productSchema = new mongoose.Schema(
       type: Object,
       required: true,
     },
-    category: {
+    categories: {
+      type: Array,
+      required: true,
+    },
+    brand: {
       type: String,
+      required: true,
+    },
+    colors: {
+      type: Array,
+      required: true,
+    },
+    sizes: {
+      type: Array,
       required: true,
     },
     checked: {

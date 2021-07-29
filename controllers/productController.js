@@ -13,10 +13,9 @@ class APIfeatures {
 
     let queryStr = JSON.stringify(queryObj);
 
-    queryStr = queryStr.replace(
-      /\b(gte|gt|lt|lte|regex)\b/g,
-      (match) => "$" + match
-    );
+    queryStr = queryStr
+      .replace(/\b(gte|gt|lt|lte|regex|in)\b/g, (match) => "$" + match)
+      .split(",");
 
     this.query.find(JSON.parse(queryStr));
 
@@ -63,9 +62,25 @@ exports.getProducts = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   try {
-    const { product_id, title, description, price, content, images, category } =
-      req.body;
+    const {
+      product_id,
+      title,
+      description,
+      price,
+      content,
+      images,
+      categories,
+      brand,
+      colors,
+      sizes,
+    } = req.body;
     if (!images) return res.status(400).json({ message: "Rasm yuklamadingiz" });
+    if (!categories)
+      return res.status(400).json({ message: "Kategoriyani belgilamadingiz" });
+    if (!colors)
+      return res.status(400).json({ message: "Ranglarni belgilamadingiz" });
+    if (!sizes)
+      return res.status(400).json({ message: "Razmerlarni belgilamadingiz" });
 
     const product = await Products.findOne({ product_id });
     if (product) return res.status(400).json({ message: "Bunday tovar bor" });
@@ -77,7 +92,10 @@ exports.createProduct = async (req, res) => {
       price,
       content,
       images,
-      category,
+      categories,
+      brand,
+      colors,
+      sizes,
     });
 
     await newProduct.save();
