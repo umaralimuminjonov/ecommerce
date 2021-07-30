@@ -1,0 +1,16 @@
+.nav {
+  max-width: 968px;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_box {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.nav_menu {
+  position: absolute;
+}
