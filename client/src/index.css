@@ -1,23 +1,23 @@
-/*==================== GOOGLE FONTS ====================*/
+/*------------------------------------------- 
+  GOOGLE FONTS 
+-------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-/*==================== VARIABLES CSS ====================*/
+/*------------------------------------------- 
+  VARIABLES CSS
+-------------------------------------------*/
 :root {
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  --first-color: #003466;
-  --first-color-second: #032546;
-  --first-color-lighter: #b6d9fc;
-  --title-color: #000;
-  --text-color: #666;
-  --text-color-light: #979797;
-  --body-color: #fff;
-  --alert-color: #d32727;
-  --support-color: #fe9e0d;
-  --container-color: #fff;
-  --scroll-bar-color: #bec7cf;
-  --scroll-thumb-color: #909aa3;
+  --first-color: #069c54;
+  --first-color-alt: #048654;
+  --first-color-light: #13d68c;
+  --title-color: #393939;
+  --text-color: #707070;
+  --text-color-light: #a6a6a6;
+  --body-color: #fbfefd;
+  --container-color: #ffffff;
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -63,11 +63,9 @@
   }
 }
 
-/*========== Variables Dark theme ==========*/
-
-/*========== Button Dark/Light ==========*/
-
-/*==================== BASE ====================*/
+/*------------------------------------------- 
+  BASE
+-------------------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -108,7 +106,9 @@ ul {
   list-style: none;
 }
 
-/*==================== REUSABLE CSS CLASSES ====================*/
+/*------------------------------------------- 
+  REUSABLE CSS CLASSES
+-------------------------------------------*/
 .section {
   padding: 2rem 0 4rem;
 }
@@ -119,23 +119,9 @@ ul {
   margin-bottom: var(--mb-3);
 }
 
-.icon {
-  border: 1.5px solid #fff;
-  border-radius: 50%;
-  padding: 5px;
-  color: var(--body-color);
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon:hover {
-  background-color: var(--body-color-alt);
-}
-
-/*==================== LAYOUT ====================*/
+/*------------------------------------------- 
+  LAYOUT
+-------------------------------------------*/
 .container {
   max-width: 768px;
   margin-left: var(--mb-1-5);
@@ -147,16 +133,59 @@ ul {
   gap: 1.5rem;
 }
 
-.header {
-  background-color: var(--first-color);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: var(--header-height);
-  width: 100%;
-  z-index: var(--z-fixed);
+/*------------------------------------------- 
+  ICONS
+-------------------------------------------*/
+.icon {
+  color: var(--text-color);
+  font-weight: var(--font-medium);
 }
 
-/*==================== NAV ====================*/
-@import url("./components/header/nav/nav.css");
+.icon:hover {
+  color: var(--first-color);
+}
 
+/*------------------------------------------- 
+  BUTTONS
+-------------------------------------------*/
+.btn {
+  display: inline-block;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+.btn_default {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+.btn_default:hover {
+  background-color: var(--first-color-alt);
+}
+
+.btn_white {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+.btn_white:hover {
+  color: var(--body-color);
+  background-color: var(--first-color-alt);
+}
+
+/*------------------------------------------- 
+  HEADER
+-------------------------------------------*/
+@import url("./components/header/header.css");
+
+/*------------------------------------------- 
+  PRODUCTS
+-------------------------------------------*/
+@import url("./components/mainpages/products/products.css");
+
+/*------------------------------------------- 
+  DETAIL PRODUCTS
+-------------------------------------------*/
+@import url("./components/mainpages/detailProduct/detailProduct.css");

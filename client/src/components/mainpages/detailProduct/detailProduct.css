@@ -1,0 +1,33 @@
+.detail_container {
+  grid-template-columns: 1fr;
+}
+
+.detail_content {
+  padding: 0 0.5rem;
+  grid-template-columns: 1fr;
+  margin-bottom: var(--mb-3);
+}
+
+.detail_img {
+  height: 80vw;
+  margin-bottom: var(--mb-1);
+}
+
+.detail_price {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-2);
+}
+
+.detail_title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  text-transform: capitalize;
+}
+
+.detail_description {
+  margin-bottom: var(--mb-1);
+}
+
+.detail_sold {
+  margin-bottom: var(--mb-1-5);
+}
