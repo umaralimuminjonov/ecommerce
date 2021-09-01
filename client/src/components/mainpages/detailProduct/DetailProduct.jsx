@@ -27,11 +27,8 @@ function DetailProduct() {
           <div className="detail_data">
             <span className="detail_price">${detailProduct.price}</span>
             <h1 className="detail_title">{detailProduct.title}</h1>
-            <p className="detail_description">
-              {detailProduct.description}
-              <br />
-              {detailProduct.content}
-            </p>
+            <p className="detail_description">{detailProduct.description}</p>
+            <p className="detail_content">{detailProduct.content}</p>
             <p className="detail_sold">Sold: {detailProduct.sold}</p>
             <Link to="/cart" className="btn btn_default detail_cart">
               Buy now

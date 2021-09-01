@@ -1,0 +1,87 @@
+.login_container,
+.register_container {
+  place-items: center;
+  height: 100%;
+}
+
+.login_form,
+.register_form {
+  width: 100%;
+  max-width: 368px;
+  background-color: var(--form-color);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(35, 0, 77, 0.2);
+  animation: animate-login 0.4s;
+}
+
+@keyframes animate-login {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.form_title {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-2);
+}
+
+.form_box {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 0.5rem;
+  padding: .75rem 1rem;
+  background-color: #ffffff;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+.form_icon {
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+
+.form_input {
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  letter-spacing: 1px;
+  color: var(--title-color);
+}
+
+.form_input::placeholder {
+  font-size: var(--normal-font-size);
+  color: var(--text-color-light);
+}
+
+.form_btn {
+  display: block;
+  margin: 2rem 0;
+  background-color: var(--first-color);
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+  text-align: center;
+  transition: 0.3s;
+  height: 3rem;
+  width: 100%;
+}
+
+.form_account, .form_signin {
+  font-weight: var(--font-semi-bold);
+  font-size: var(--small-font-size);
+}
+
+.form_signin {
+  color: var(--first-color-light);
+  cursor: pointer;
+}

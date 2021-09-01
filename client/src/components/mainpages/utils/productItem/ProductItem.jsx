@@ -1,18 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { UilArrowRight } from "@iconscout/react-unicons";
+import ProductLink from "../productLink/ProductLink";
 
-function ProductItem({ product }) {
+function ProductItem({ product, isAdmin }) {
   return (
-    <Link to={`/detail/${product._id}`}>
-      <div className="product_content">
-        <img src={product.images.url} alt="" className="product_img" />
-        <span className="product_price">${product.price}</span>
-        <h3 className="product_title">{product.title}</h3>
-        <p className="product_description">{product.description}</p>
-        <p className="product_link">View <UilArrowRight /></p>
-      </div>
-    </Link>
+    <div className="product_content">
+      {isAdmin && <input type="checkbox" className="product_checkbox" checked={product.checked} />}
+      <img src={product.images.url} alt="" className="product_img" />
+      <span className="product_price">${product.price}</span>
+      <h3 className="product_title">{product.title}</h3>
+      <p className="product_description">{product.description}</p>
+      <ProductLink product={product} />
+    </div>
   );
 }
 
